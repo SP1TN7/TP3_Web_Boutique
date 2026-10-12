@@ -1,0 +1,124 @@
+/* RESET & ELEMENTS GENERAUX */
+* {
+margin: 0; /* Supprime les marges externes par défaut */
+padding: 0; /* Supprime les espacements internes par défaut */
+box-sizing: border-box; /* Inclut bordures et paddings dans le calcul de la largeur */
+font-family: 'Poppins', sans-serif; /* Applique une police moderne */
+}
+body {
+background-color: #f8fafc; /* Teinte de fond claire */
+color: #1e293b; /* Couleur gris foncé pour le texte */
+}
+/* HEADER & NAVIGATION (FLEXBOX HORIZONTAL) */
+.shop-header {
+background-color: #ffffff; /* Fond blanc */
+display: flex; /* Active Flexbox pour aligner en ligne */
+justify-content: space-between; /* Aligne le logo, nav et panier aux extrémités */
+align-items: center; /* Aligne verticalement au centre */
+padding: 15px 5%; /* Espacement interne */
+box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Ombre sous le menu */
+}
+.logo { font-size: 1.5rem; font-weight: 800; color: #0f172a; }
+.logo span { color: #6366f1; } /* Touche violette */
+.shop-nav a {
+text-decoration: none; /* Supprime le soulignement */
+color: #64748b; /* Couleur grise adoucie */
+margin: 0 15px; /* Espace horizontal entre chaque lien */
+font-weight: 500;
+transition: color 0.2s;
+}
+.shop-nav a:hover, .shop-nav a.active {
+color: #6366f1;
+border-bottom: 2px solid #6366f1; /* Soulignement moderne */
+}
+.cart-icon {
+background: #f1f5f9;
+padding: 8px 15px;
+border-radius: 20px;
+font-weight: bold;
+}
+/* BANNIERE HERO */
+.hero-banner {
+text-align: center;
+padding: 40px 20px;
+background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+margin-bottom: 30px;
+}
+/* FLEXBOX INTERNE DE LA CARTE PRODUIT */
+.product-card {
+background: #ffffff;
+border-radius: 16px;
+border: 1px solid #e2e8f0;
+position: relative; /* Référence pour le positionnement absolu du badge */
+overflow: hidden;
+padding: 15px;
+display: flex; /* Active Flexbox */
+flex-direction: column; /* Aligne verticalement les éléments */
+justify-content: space-between; /* Repousse le bouton vers le bas */
+transition: all 0.3s ease;
+}
+.product-card:hover {
+transform: translateY(-8px); /* Animation légère vers le haut */
+box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+}
+.product-img-placeholder {
+height: 180px;
+background-color: #f1f5f9;
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 4rem;
+}
+.product-info {
+margin-top: 15px;
+display: flex;
+flex-direction: column;
+flex-grow: 1; /* Permet à cette zone de s'étirer */
+}
+.product-category { font-size: 0.75rem; text-transform: uppercase; color: #94a3b8; }
+.product-title { font-size: 1.1rem; color: #0f172a; margin: 5px 0; }
+.product-desc { font-size: 0.85rem; color: #64748b; line-height: 1.4; margin-bottom: 15px; }
+.product-price-row {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-top: auto; /* Force l'alignement en bas de la carte */
+margin-bottom: 15px;
+}
+.current-price { font-size: 1.3rem; font-weight: 700; color: #4f46e5; }
+.old-price { font-size: 0.9rem; text-decoration: line-through; color: #94a3b8; }
+.add-to-cart-btn {
+background-color: #0f172a;
+color: white;
+border: none;
+padding: 12px;
+border-radius: 10px;
+cursor: pointer;
+font-weight: 600;
+}
+.add-to-cart-btn:hover { background-color: #4f46e5; }
+.promo-badge {
+position: absolute; /* Placement libre sur l'image */
+top: 25px;
+left: 25px;
+background: #ef4444;
+color: white;
+padding: 4px 10px;
+border-radius: 8px;
+font-size: 0.75rem;
+font-weight: 700;
+z-index: 10;
+}
+.promo-badge.new { background: #10b981; }
+.promo-badge.hot { background: #f59e0b; }
+/* CSS GRID MACRO RESPONSIVE */
+.products-grid {
+display: grid; /* Active CSS Grid */
+/* Grille adaptative auto-gérée sans media query */
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px; /* Espace régulier entre les cartes */
+max-width: 1300px;
+margin: 0 auto; /* Centrage */
+padding: 20px 5%;
+}
